@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+.biggest{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(180, 52%, 96%);
+    gap: 30px;
+    padding-bottom: 40px;
+}
+.content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 100px;
+}
+.iger{
+    width: 100%;
+    height: 20vh;
+    background-color:  hsl(180, 29%, 50%);
+}
+.overall{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.container{
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 20px;
+    box-shadow: 0px 4px 4px hsl(180, 8%, 52%);
+    border-left: 5px solid white;
+}
+.container:hover{
+    border-left: 5px solid hsl(180, 29%, 50%);
+}
+.first{
+    min-height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 22px 0;
+    gap: 30px;
+
+}
+.enclosure{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+
+}
+.enclosure h3:hover{
+    color: hsl(180, 29%, 50%);
+}
+.top{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.top h4:nth-of-type(1){
+    color: hsl(180, 29%, 50%);
+}
+.top h4:nth-of-type(2){
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+    padding: 1px 5px;
+    border-radius: 10px;
+}
+.top h4:nth-of-type(3){
+    background-color: black;
+    color: white;
+    padding: 1px 5px;
+    border-radius: 10px;
+}
+.enclosure h3{
+    color: hsl(180, 13%, 15%);
+    cursor: pointer;
+}
+.bottom{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.bottom h4{
+    color: hsl(180, 8%, 52%);
+}
+.second{
+    min-height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.second h4:nth-of-type(1), .second h4:nth-of-type(2), .second h4:nth-of-type(3), .second h4:nth-of-type(4), .second h4:nth-of-type(5){
+    padding: 10px 5px;
+    background-color: hsl(180, 52%, 96%);
+    color: hsl(180, 29%, 50%);
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+.second h4:nth-of-type(1):hover, .second h4:nth-of-type(2):hover, .second h4:nth-of-type(3):hover, .second h4:nth-of-type(4):hover, .second h4:nth-of-type(5):hover{
+    padding: 10px 5px;
+    background-color:  hsl(180, 29%, 50%);
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.special{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: hsl(180, 29%, 50%);
+}
+.kenger{
+    padding: 10px 13px;
+    border-radius: 10px;
+    background-color: hsl(180, 52%, 96%);
+    cursor: pointer;
+
+}
+.kenger:hover{
+    background-color:  hsl(180, 29%, 50%);
+    color: white;
+}
+.loading{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.innerloading{
+    width: 80px;
+    height: 80px;
+    border-top: 5px solid orange;
+    border-bottom: 5px solid red;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    animation: animate 2s linear infinite;
+    border-radius: 50%;
+}
+@keyframes animate {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+@media screen and (max-width: 950px) {
+    .container{
+        flex-direction: column;
+        padding: 0;
+        padding: 0 20px;
+    }
+    .enclosure{
+        padding-top: 25px;
+    }
+    .content{
+        padding: 0 20px;
+    }
+    .first{
+        gap: 0;
+    }
+    .second{
+        border-top: 1px solid black;
+        justify-content: flex-start;
+    }
+    .image{
+        position: relative;
+        bottom: 39px;
+        width: 0;
+    }
+    .picture{
+        height: 50px;
+        padding-left: 20px;
+
+    }
+}
