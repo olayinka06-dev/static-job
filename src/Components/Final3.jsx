@@ -53,6 +53,13 @@ const Final3 = () => {
     setSelectedLanguages([]);
   };
 
+  const filteredJobs = jobs.filter((job) => {
+    const roleMatch = selectedRoles.length === 0 || selectedRoles.includes(job.role);
+    const levelMatch = selectedLevels.length === 0 || selectedLevels.includes(job.level);
+    const languageMatch = selectedLanguages.length === 0 || job.languages.some((language) => selectedLanguages.includes(language));
+    return roleMatch && levelMatch && languageMatch;
+  });
+
   return (
     <div className="biggest">
       <div><img className="iger" src={header} alt="" /></div>
@@ -84,7 +91,7 @@ const Final3 = () => {
             </div> 
           </div>             
 
-          {jobs.map((job) => (
+          {filteredJobs.map((job) => (
             <div className='container' key={job.id}>
               <div className="first">
                 <div className="image"><img className='picture' src={job.logo} alt="" /></div>
