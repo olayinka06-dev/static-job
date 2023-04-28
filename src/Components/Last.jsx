@@ -8,6 +8,7 @@ const Last = () => {
   const [selectedRoles, setSelectedRoles] = useState([]);
   const [selectedLevels, setSelectedLevels] = useState([]);
   const [selectedLanguages, setSelectedLanguages] = useState([]);
+  const [showClearButton, setShowClearButton] = useState(false);
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -17,16 +18,19 @@ const Last = () => {
   const handleRoleClick = (role) => {
     setSelectedRoles((prev) => [...prev, role]);
     setShow(true);
+    setShowClearButton(true);
   };
 
   const handleLevelClick = (level) => {
     setSelectedLevels((prev) => [...prev, level]);
     setShow(true);
+    setShowClearButton(true);
   };
 
   const handleLanguageClick = (language) => {
     setSelectedLanguages((prev) => [...prev, language]);
     setShow(true);
+    setShowClearButton(true);
   };
 
   const handleRemoveClick = (index, type) => {
@@ -43,12 +47,17 @@ const Last = () => {
       default:
         break;
     }
+        // Hide the "Clear" button if there are no more selected filters
+    if (selectedRoles.length === 0 && selectedLevels.length === 0 && selectedLanguages.length === 0) {
+      setShowClearButton(false);
+    }
   };
 
   const handleClearClick = () => {
     setSelectedRoles([]);
     setSelectedLevels([]);
     setSelectedLanguages([]);
+    setShowClearButton(false);
   };
 
   return (
@@ -56,52 +65,56 @@ const Last = () => {
         <div>
             <img className="iger" src={header} alt="" />
         </div>
-        <div className={`${show ? "todo todo-sub" : "todo"}`}>
-            {selectedRoles.length > 0 && (
-                <div style={{display: "flex", flexDirection: "row", width: "100%"}}  className="list">
-                    <div style={{display: "flex", flexDirection: "row", width: "100%"}}  className="join">
-                    {selectedRoles.map((role, index) => (
-                        <div style={{display: "flex", flexDirection: "row", width: "100%"}}  className="bind" key={index}>
-                          {role}{' '}
-                          <button onClick={() => handleRemoveClick(index, 'roles')}>
-                              X
-                          </button>
-                        </div>
-                    ))}
-                    </div>
-                </div>
-            )}
-            {selectedLevels.length > 0 && (
-                <div style={{display: "flex", flexDirection: "row", width: "100%"}}  className="list">
-                    <div style={{display: "flex", flexDirection: "row", width: "100%"}}  className="join">
-                    {selectedLevels.map((level, index) => (
-                        <div style={{display: "flex", flexDirection: "row", width: "100%"}}  className="bind" key={index}>
-                          {level}{' '}
-                          <button onClick={() => handleRemoveClick(index, 'levels')}>
-                              X
-                          </button>
-                        </div>
-                    ))}
-                    </div>
-                </div>
-            )}
-            {selectedLanguages.length > 0 && (
-                <div style={{display: "flex", flexDirection: "row", width: "100%"}} className="list">
-                    <div style={{display: "flex", flexDirection: "row", width: "100%"}}  className="join">
-                    {selectedLanguages.map((language, index) => (
-                        <div style={{display: "flex", flexDirection: "row", width: "100%"}}  className="bind" key={index}>
-                          {language}{' '}
-                          <button onClick={() => handleRemoveClick(index, 'languages')}>
-                              X
-                          </button>
-                        </div>
-                    ))}
-                    </div>
-                </div>
-            )}
-            {
-              show ? <button onClick={handleClearClick}>Clear</button> : null
-            }
+        <div className="aliner">
+          <div className={`${showClearButton ? "todo todo-sub" : "todo"}`}>
+              {selectedRoles.length > 0 && (
+                  // <div className="list">
+                      <div   className="">
+                        {selectedRoles.map((role, index) => (
+                            <div   className="bind" key={index}>
+                              {role}{' '}
+                              <div>
+                                <button onClick={() => handleRemoveClick(index, 'roles')}>X</button>
+                              </div>
+                            </div>
+                        ))}
+                      </div>
+                  // </div>
+              )}
+              {selectedLevels.length > 0 && (
+                  // <div className="list">
+                      <div   className="">
+                      {selectedLevels.map((level, index) => (
+                          <div   className="bind" key={index}>
+                            {level}{' '}
+                            <div>
+                              <button onClick={() => handleRemoveClick(index, 'levels')}>X</button>
+                            </div>
+                          </div>
+                      ))}
+                      </div>
+                  // </div>
+              )}
+              {selectedLanguages.length > 0 && (
+                  // <div className="list">
+                      <div className="">
+                      {selectedLanguages.map((language, index) => (
+                          <div className="bind" key={index}>
+                            {language}{' '}
+                            <div>
+                              <button onClick={() => handleRemoveClick(index, 'languages')}>X</button>
+                            </div>
+                          </div>
+                      ))}
+                      </div>
+                  // </div>
+              )}
+          {(selectedRoles.length > 0 || selectedLevels.length > 0 || selectedLanguages.length > 0) && (
+            <div>
+              <button onClick={handleClearClick}>Clear</button>
+            </div>
+          )}
+          </div>
         </div>
         <div className="content">
           <div className="overall">
