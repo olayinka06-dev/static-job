@@ -53,6 +53,7 @@ const Final3 = () => {
     setSelectedLanguages([]);
   };
 
+
   const filteredJobs = jobs.filter((job) => {
     const roleMatch = selectedRoles.length === 0 || selectedRoles.includes(job.role);
     const levelMatch = selectedLevels.length === 0 || selectedLevels.includes(job.level);
