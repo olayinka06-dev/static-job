@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import jobdata from '../alldata';
+import jobdata from './alldata'
 import './Practice.css';
 import header from '../image/bg-header-desktop.svg';
 
@@ -64,7 +64,7 @@ const Final3 = () => {
   return (
     <div className="biggest">
       <div><img className="iger" src={header} alt="" /></div>
-      <div className="content">          
+      <div className="content"> 
         <div className="overall">
           <div className="aliner">
             <div className={`todo ${selectedRoles.length > 0 || selectedLevels.length > 0 || selectedLanguages.length > 0 ? "todo-sub" : "todo"}`}>
@@ -99,7 +99,7 @@ const Final3 = () => {
                 <div className="enclosure">
                   <div className="top">
                     <h4>{job.company}</h4>
-                    {job.new ? <h4>New!</h4> : null}
+                    {job.new ? <h4>New!꼌</h4> : null}
                     {job.featured ? <h4>Feature</h4> : null}
                         </div>
                         <span>{job.position}</span>
