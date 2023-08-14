@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import jobdata from './alldata'
 import './Practice.css';
-import header from '../image/bg-header-desktop.svg';
 
 const Final3 = () => {
   const [jobs, setJobs] = useState([]);
@@ -63,7 +62,7 @@ const Final3 = () => {
 
   return (
     <div className="biggest">
-      <div><img className="iger" src={header} alt="" /></div>
+      <div><img className="iger" src={"/images/bg-header-desktop.svg"} alt="" /></div>
       <div className="content"> 
         <div className="overall">
           <div className="aliner">
