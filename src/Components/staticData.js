@@ -1,4 +1,4 @@
-const jobdata = [
+const staticData = [
   {
     id: 1,
     company: "Photosnap",
@@ -151,4 +151,4 @@ const jobdata = [
   },
 ];
 
-export default jobdata;
+export default staticData;

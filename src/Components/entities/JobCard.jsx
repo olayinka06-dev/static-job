@@ -5,7 +5,7 @@ export const JobCard = () => {
   const { allData } = useStaticJobContext();
   return (
     <div className="flex flex-col gap-3">
-      {allData.jobdata.map((job) => (
+      {allData.filteredJobs.map((job) => (
         <div
           className="flex items-start bg-white p-3 justify-start flex-col md:flex-row md:justify-between md:items-center"
           key={job.id}
@@ -29,10 +29,10 @@ export const JobCard = () => {
             </div>
           </div>
           <div className="grid grid-cols-3 md:grid-cols-5 gap-3 items-center">
-            <button onClick={allData.handleRoleClick(job.role)}>{job.role}</button>
-            <button>{job.level}</button>
+            <button onClick={()=> allData.handleRoleClick(job.role)}>{job.role}</button>
+            <button onClick={()=> allData.handleLevelClick(job.level)}>{job.level}</button>
             {job.languages.map((language) => (
-              <button key={language}>{language}</button>
+              <button onClick={()=> allData.handleLanguageClick(language)} key={language}>{language}</button>
             ))}
           </div>
         </div>

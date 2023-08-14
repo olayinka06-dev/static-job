@@ -1,7 +1,11 @@
 import React from 'react'
+import { TodoList } from '../entities/TodoList'
 
 export const Header = () => {
   return (
-    <img className='h-[20vh] w-full bg-main' src="/images/bg-header-desktop.svg" alt="" />
+   <nav className='h-[20vh] relative'>
+     <img className='h-full w-full bg-main' src="/images/bg-header-desktop.svg" alt="" />
+     <TodoList/>
+   </nav>
   )
 }
