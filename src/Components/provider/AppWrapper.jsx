@@ -3,7 +3,7 @@ import { StaticJobContext } from "./Context";
 import staticData from "../staticData";
 
 
-export const AppProvider = ({ children }) => {
+export const AppWrapper = ({ children }) => {
   const [jobs, setJobs] = useState([]);
   const [selectedRole, setSelectedRole] = useState([]);
   const [selectedLevel, setSelectedLevel] = useState([]);
