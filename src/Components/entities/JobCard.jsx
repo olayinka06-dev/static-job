@@ -8,22 +8,23 @@ export const JobCard = () => {
 
   useEffect(() => {
     Aos.init({
-      duration: 1000,
+      duration: 700,
       easing: "ease-in",
       delay: 100
     })
   }, []);
 
   return (
-    <div data-aos="fade-up" className="flex flex-col gap-16 md:gap-6">
+    <div className="flex flex-col gap-16 md:gap-6">
       {allData.filteredJobs.map((job) => (
         <div
           className="flex items-start bg-white py-7 rounded-xl shadow px-4 md:px-8 justify-start flex-col md:flex-row md:justify-between md:items-center"
           key={job.id}
+          data-aos="fade-up"
         >
-          <div className="flex relative flex-row gap-2 items-center">
+          <div className="flex relative flex-row gap-4 items-center">
             <div className="">
-              <img className="md:h-auto h-[65px] md:relative absolute top-[-65px]" src={job.logo} alt="" />
+              <img className="md:h-auto h-[65px] md:relative md:top-0 absolute top-[-65px]" src={job.logo} alt="" />
             </div>
             <div className="flex mt-5 md:mt-0 flex-col gap-2">
               <div className="flex flex-row gap-2">
@@ -31,7 +32,7 @@ export const JobCard = () => {
                 {job.new ? <h4 className="py-[4px] px-4 text-white bg-main rounded-3xl">New!</h4> : null}
                 {job.featured ? <h4 className="py-[4px] px-4 text-white bg-[rgb(42,58,57)] rounded-3xl">Feature</h4> : null}
               </div>
-              <span className="font-[700] hover:text-main">{job.position}</span>
+              <span className="font-[700] transition duration-500 ease-linear cursor-pointer hover:text-main">{job.position}</span>
               <div className="flex flex-row text-[rgb(152,159,159)] gap-2">
                 <h4>{job.postedAt}</h4>
                 <h4>. {job.contract} .</h4>
