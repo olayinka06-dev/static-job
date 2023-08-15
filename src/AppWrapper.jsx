@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { StaticJobContext } from "./Context";
-import staticData from "../staticData";
+import { StaticJobContext } from "./components/provider/Context";
+import staticData from "./components/staticData";
 
 
 export const AppWrapper = ({ children }) => {
