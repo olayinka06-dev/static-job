@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useStaticJobContext } from "../../Context";
+import { useStaticJobContext } from "./Context";
 import Aos from "aos";
 import "aos/dist/aos.css";
 

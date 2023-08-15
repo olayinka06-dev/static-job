@@ -1,5 +1,5 @@
 import React from 'react'
-import { TodoList } from '../entities/TodoList'
+import { TodoList } from './TodoList'
 
 export const Header = () => {
   return (
