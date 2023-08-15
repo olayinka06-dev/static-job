@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StaticJobContext } from "./components/provider/Context";
+import { StaticJobContext } from "./Context";
 import staticData from "./staticData";
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { JobCard } from '../entities/JobCard'
-import { useStaticJobContext } from '../provider/Context'
+import { useStaticJobContext } from '../../Context'
 
 export const StaticJob = () => {
   const {allData} = useStaticJobContext()

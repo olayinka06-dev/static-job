@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticJobContext } from "../provider/Context";
+import { useStaticJobContext } from "../../Context";
 
 export const TodoList = () => {
   const { allData } = useStaticJobContext();
