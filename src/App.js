@@ -1,5 +1,5 @@
 import React from "react";
-import { Home } from "./components/staticjob/Home";
+import { Home } from "./Home";
 
 const App = () => {
   return (

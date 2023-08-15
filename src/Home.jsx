@@ -1,6 +1,6 @@
 import React from "react";
-import { Header } from "./Header";
-import { StaticJob } from "./StaticJob";
+import { Header } from "./components/staticjob/Header";
+import { StaticJob } from "./components/staticjob/StaticJob";
 
 export const Home = () => {
   return (
