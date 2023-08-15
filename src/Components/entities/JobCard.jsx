@@ -24,7 +24,7 @@ export const JobCard = () => {
         >
           <div className="flex relative flex-row gap-4 items-center">
             <div className="">
-              <img className="md:h-auto h-[65px] md:relative md:top-0 absolute top-[-65px]" src={job.logo} alt="" />
+              <img className="md:h-auto h-[65px] md:relative md:top-0 absolute top-[-65px]" src={job.logo} alt="logo" />
             </div>
             <div className="flex mt-5 md:mt-0 flex-col gap-2">
               <div className="flex flex-row gap-2">
