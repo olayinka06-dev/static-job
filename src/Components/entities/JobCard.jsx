@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useStaticJobContext } from "../provider/Context";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export const JobCard = () => {
   const { allData } = useStaticJobContext();
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in",
+      delay: 100
+    })
+  }, []);
+
   return (
-    <div className="flex flex-col gap-16 md:gap-6">
+    <div data-aos="fade-up" className="flex flex-col gap-16 md:gap-6">
       {allData.filteredJobs.map((job) => (
         <div
           className="flex items-start bg-white py-7 rounded-xl shadow px-4 md:px-8 justify-start flex-col md:flex-row md:justify-between md:items-center"

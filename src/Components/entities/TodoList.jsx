@@ -3,6 +3,7 @@ import { useStaticJobContext } from "../provider/Context";
 
 export const TodoList = () => {
   const { allData } = useStaticJobContext();
+
   return (
     <div className="w-full flex flex-col items-center">
       <div className="container absolute bottom-[-45px] sm:bottom-[-40px]">
